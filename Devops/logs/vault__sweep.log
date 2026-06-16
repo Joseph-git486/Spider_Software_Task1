@@ -1,0 +1,19 @@
+[2026-06-16 23:59:28] [WARN] /home/joseph-mario/Desktop/Devops/dangerous1.sh contains rm -rf
+[2026-06-16 23:59:28] [WARN] /home/joseph-mario/Desktop/Devops/dangerous4.sh contains mkfs
+[2026-06-16 23:59:28] [WARN] /home/joseph-mario/Desktop/Devops/vault_sweep.sh contains rm -rf
+[2026-06-16 23:59:28] [WARN] /home/joseph-mario/Desktop/Devops/vault_sweep.sh contains suspicious download (curl/wget piped to shell)
+[2026-06-16 23:59:28] [WARN] /home/joseph-mario/Desktop/Devops/dangerous2.sh contains suspicious download (curl/wget piped to shell)
+[2026-06-16 23:59:28] [INFO] /home/joseph-mario/Desktop/Devops/.env Valid: 4, Invalid: 6
+[2026-06-16 23:59:28] [SKIP] /home/joseph-mario/Desktop/Devops/.env Rejected: KEY = value,SERVER-NAME=x,USER="admin",export PATH=$PATH:/tmp,PASSWORD=secret123,TOKEN=abc
+[2026-06-16 23:59:28] [WARN] /home/joseph-mario/Desktop/Devops/vault_sweep.sh contains reverse shell pattern
+[2026-06-16 23:59:28] [WARN] /home/joseph-mario/Desktop/Devops/dangerous3.sh contains reverse shell pattern
+[2026-06-17 00:00:52] [WARN] /home/joseph-mario/Desktop/Devops/dangerous1.sh contains rm -rf
+[2026-06-17 00:00:52] [WARN] /home/joseph-mario/Desktop/Devops/dangerous4.sh contains mkfs
+[2026-06-17 00:00:52] [WARN] /home/joseph-mario/Desktop/Devops/vault_sweep.sh contains rm -rf
+[2026-06-17 00:00:52] [WARN] /home/joseph-mario/Desktop/Devops/vault_sweep.sh contains suspicious download (curl/wget piped to shell)
+[2026-06-17 00:00:52] [WARN] /home/joseph-mario/Desktop/Devops/dangerous2.sh contains suspicious download (curl/wget piped to shell)
+[2026-06-17 00:00:52] [INFO] /home/joseph-mario/Desktop/Devops/.env Valid: 4, Invalid: 6
+[2026-06-17 00:00:52] [SKIP] /home/joseph-mario/Desktop/Devops/.env Rejected: KEY = value,SERVER-NAME=x,USER="admin",export PATH=$PATH:/tmp,PASSWORD=secret123,TOKEN=abc
+[2026-06-17 00:00:52] [INFO] /home/joseph-mario/Desktop/Devops/.env.sanitized Valid: 4, Invalid: 0
+[2026-06-17 00:00:52] [WARN] /home/joseph-mario/Desktop/Devops/vault_sweep.sh contains reverse shell pattern
+[2026-06-17 00:00:52] [WARN] /home/joseph-mario/Desktop/Devops/dangerous3.sh contains reverse shell pattern
