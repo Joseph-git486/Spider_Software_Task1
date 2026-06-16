@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hawkins Labyrinth</title>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>The Hawkins Labyrinth</h1>
+  <div class="sub">Navigate the shifting grid. Find the gate. Beat Vecna before he claims Hawkins.</div>
+
+  <div class="hud">
+    <div class="hud-item player">❤ Player HP: <span id="player-hp">150</span></div>
+    <div class="hud-item vecna" id="vecna-hud">💀 Vecna HP: <span id="vecna-hp">5</span></div>
+    <div class="hud-item timer">⏱ <span id="timer">0</span>s</div>
+  </div>
+
+  <main>
+    <aside class="sidebar">
+      <div class="preview" id="preview">
+        <div class="arrow up" id="arrow-up">5</div>
+        <div class="arrow down" id="arrow-down">5</div>
+        <div class="arrow left" id="arrow-left">5</div>
+        <div class="arrow right" id="arrow-right">5</div>
+        <div class="preview-label" id="preview-label">START</div>
+      </div>
+      <div class="dice" id="dice">?</div>
+      <button id="roll-btn" class="cyan">Roll Dice</button>
+      <div class="inventory" id="inventory">
+        🔥 Flamethrower: 0<br>
+        🌀 Psychic: 0
+      </div>
+    </aside>
+    <div id="grid"></div>
+  </main>
+
+  <div class="controls">
+    <button id="undo-btn">↶ Undo</button>
+    <button id="replay-btn">▶ Replay</button>
+    <button id="leaderboard-btn" class="gold">🏆 Leaderboard</button>
+    <button id="help-btn" class="cyan">? Help</button>
+    <button id="restart-btn">⟳ Restart</button>
+  </div>
+
+  <div class="log" id="log"></div>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal"></div>
+  </div>
+
+<script src = "script.js"></script>
+</body>
+</html>
