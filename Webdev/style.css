@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --border: #2a2a3a;
+    --diamond: #e8c93a;
+    --diamond-dim: #7a6510;
+    --red: #e04040;
+    --green: #3ecf6a;
+    --text: #e8e8f0;
+    --muted: #6b6b88;
+    --card: #1a1a28;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: 0.1em;
+    color: var(--diamond);
+    text-shadow: 0 0 30px rgba(232,201,58,0.4);
+  }
+  .header p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 6px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── PLAYERS ROW ── */
+  .players-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .player-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+    flex: 1;
+    min-width: 130px;
+    text-align: center;
+    transition: border-color 0.2s, opacity 0.3s;
+  }
+  .player-card.eliminated {
+    opacity: 0.35;
+    border-color: #333;
+  }
+  .player-card.winner-highlight {
+    border-color: var(--diamond);
+    box-shadow: 0 0 16px rgba(232,201,58,0.25);
+  }
+  .player-card .player-name {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .player-card .player-lives {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+  .heart { color: var(--red); }
+  .heart.lost { color: #333; }
+  .player-card .player-number {
+    margin-top: 8px;
+    font-size: 1.6rem;
+    font-family: 'Cinzel', serif;
+    color: var(--diamond);
+    min-height: 2rem;
+  }
+  .player-card .player-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .elim-badge {
+    margin-top: 6px;
+    font-size: 0.65rem;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── INPUT AREA ── */
+  .input-area {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .input-area label {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .number-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+  .number-input-wrap input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    width: 130px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .number-input-wrap input:focus {
+    border-color: var(--diamond);
+  }
+  .btn-submit {
+    background: var(--diamond);
+    color: #0a0a0f;
+    border: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 18px;
+    width: 100%;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .btn-submit:hover { background: #f5dc60; }
+  .btn-submit:active { transform: scale(0.98); }
+  .btn-submit:disabled { background: #3a3a20; color: #666; cursor: not-allowed; }
+  .error-msg {
+    color: var(--red);
+    font-size: 0.8rem;
+    margin-top: 8px;
+    min-height: 1.2em;
+  }
+
+  /* ── RESULT PANEL ── */
+  .result-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    display: none;
+    margin-bottom: 24px;
+  }
+  .result-panel.show { display: block; }
+  .result-panel .target-number {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: var(--diamond);
+    text-shadow: 0 0 20px rgba(232,201,58,0.5);
+    line-height: 1;
+  }
+  .result-panel .target-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    margin-bottom: 18px;
+  }
+  .result-breakdown {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 16px;
+    text-align: left;
+    font-size: 0.85rem;
+  }
+  .result-breakdown .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .result-breakdown .row:last-child { border-bottom: none; }
+  .result-breakdown .row .name { color: var(--muted); }
+  .result-breakdown .row .val { font-family: 'Cinzel', serif; color: var(--diamond); }
+  .result-breakdown .row .diff { color: var(--muted); font-size: 0.75rem; }
+  .winner-announce {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    margin: 12px 0;
+    color: var(--green);
+  }
+  .winner-announce.lose { color: var(--red); }
+
+  .btn-next {
+    background: transparent;
+    border: 1px solid var(--diamond);
+    color: var(--diamond);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    transition: background 0.15s;
+  }
+  .btn-next:hover { background: rgba(232,201,58,0.1); }
+
+  /* ── GAME OVER ── */
+  .game-over-screen {
+    text-align: center;
+    display: none;
+  }
+  .game-over-screen.show { display: block; }
+  .game-over-screen h2 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 10px;
+  }
+  .game-over-screen h2.victory { color: var(--diamond); }
+  .game-over-screen h2.defeat { color: var(--red); }
+  .game-over-screen p { color: var(--muted); margin-bottom: 24px; font-size: 0.9rem; }
+  .btn-restart {
+    background: var(--diamond);
+    color: #0a0a0f;
+    border: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 14px 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-restart:hover { background: #f5dc60; }
+
+  /* ── ROUND COUNTER ── */
+  .round-badge {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .round-badge span { color: var(--diamond); }
+
+  /* ── FORMULA NOTE ── */
+  .formula-note {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 0.03em;
+  }

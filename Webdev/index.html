@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>King of Diamonds ♦</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+  <h1>♦ King of Diamonds ♦</h1>
+  <p>Keynesian Beauty Contest · Outwit the bots</p>
+</div>
+
+
+<div id="gameArea">
+
+  <div class="round-badge">Round <span id="roundNum">1</span></div>
+
+
+  <div class="players-row" id="playersRow"></div>
+
+  <div class="input-area" id="inputArea">
+    <label>Choose your number (0 – 100)</label>
+    <div class="number-input-wrap">
+      <input type="number" id="userInput" min="0" max="100" placeholder="?" />
+    </div>
+    <div class="error-msg" id="errorMsg"></div>
+    <button class="btn-submit" id="submitBtn" onclick="submitRound()">Submit</button>
+    <div class="formula-note">Spider Number = Average × 0.8 · Closest wins</div>
+  </div>
+
+  <div class="result-panel" id="resultPanel">
+    <div class="target-number" id="targetDisplay">—</div>
+    <div class="target-label">Spider Number</div>
+    <div class="result-breakdown" id="resultBreakdown"></div>
+    <div class="winner-announce" id="winnerAnnounce"></div>
+    <button class="btn-next" id="nextBtn" onclick="nextRound()">Next Round →</button>
+  </div>
+
+</div>
+
+<div class="game-over-screen" id="gameOverScreen">
+  <h2 id="gameOverTitle"></h2>
+  <p id="gameOverMsg"></p>
+  <button class="btn-restart" onclick="initGame()">Play Again</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
